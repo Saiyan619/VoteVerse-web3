@@ -4,16 +4,18 @@ import moment from 'moment';
 
 
 const ProposalDetails = ({getCandidates, candidates, CanVote, voteYes, voteNo, getRemainingTime, remainingTime }) => {
-    console.log(CanVote)
-    console.log(remainingTime)
-    console.log(candidates)
+    
 
     useEffect(() => {
         getCandidates()
         getRemainingTime()
     }, [])
     
+    console.log(CanVote)
+    console.log(remainingTime)
+    console.log(candidates)
 
+    
     const seconds = remainingTime;
 const timeLeft = moment.duration(seconds, 'seconds').humanize();
 

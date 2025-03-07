@@ -17,7 +17,7 @@ const Proposal = () => {
     
 
   return (
-      <div className='bg-gray-50'>
+      <div data-theme="dark" className=''>
           <Navbar />
          
           <div className='p-3 md:p-15 lg:p-20'>
@@ -31,7 +31,7 @@ const Proposal = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }} className='bg-white p-5 rounded-md shadow-xs'>
+            transition={{ duration: 0.5 }} data-theme="dark" className='bg-slate-900 p-5 rounded-md shadow-xs'>
           <ProposalDetails getCandidates={getCandidates} remainingTime={remainingTime} getRemainingTime={getRemainingTime} voteNo={voteNo} voteYes={voteYes} CanVote={CanVote} candidates={candidates} />
           </motion.div>
           </div>

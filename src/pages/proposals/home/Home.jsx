@@ -6,7 +6,7 @@ import Footer from '../../../Components/Footer'
 const Home = () => {
 
   return (
-    <div>
+    <div data-theme="dark" >
       <Navbar />
       <Hero />
 

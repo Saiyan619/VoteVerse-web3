@@ -1,5 +1,5 @@
 import React from 'react'
-import { useContext, createContext, useState } from 'react'
+import { useContext, createContext, useState, useEffect } from 'react'
 import { BrowserProvider, ethers } from "ethers"; // ✅ Correct import for v6
 import { contractAbi, contractAddress } from "../Constant/constant";
 
@@ -17,6 +17,12 @@ const AppContext = ({children}) => {
       const [candidates, setCandidates] = useState([])
       const [number, setNumber] = useState('')
     const [CanVote, setcanVote] = useState(true)
+
+      useEffect(() => {
+          getCandidates(),
+          getRemainingTime()
+          getCurrentStatus()
+      }, [])
     
 
     // const postNotify = () => toast.success('House posted successfully');
