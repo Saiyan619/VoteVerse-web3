@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Navbar from '../../Components/Navbar'
 import Hero from './home/Hero'
 import Footer from '../../Components/Footer'
-import ProposalDetails from './proposalDetails'
+import ProposalDetails from './ProposalDetails'
 import { motion } from 'motion/react';
 import { useAppContext } from '../../utils/AppContext'
 
