@@ -113,6 +113,7 @@ const AppContext = ({ children }) => {
     }
   };
 
+  //Get Current Status of Voting(Returns a boolean depending on the remaining time left)
   const getCurrentStatus = async () => {
     const provider = new BrowserProvider(window.ethereum); // Use BrowserProvider instead of Web3Provider
     await window.ethereum.request({ method: "eth_requestAccounts" });
@@ -130,6 +131,8 @@ const AppContext = ({ children }) => {
     setVotingStatus(status);
   };
 
+
+  //Get time left for the voting to end
   const getRemainingTime = async () => {
     const provider = new BrowserProvider(window.ethereum); // Use BrowserProvider instead of Web3Provider
     await window.ethereum.request({ method: "eth_requestAccounts" });
@@ -145,6 +148,7 @@ const AppContext = ({ children }) => {
     setRemainingTime(parseInt(time, 16));
   };
 
+  //Self explanitory
   const connectToMetamask = async () => {
     if (window.ethereum) {
       try {
@@ -170,15 +174,15 @@ const AppContext = ({ children }) => {
     }
   };
 
-  const handleAccountChange = (acc) => {
-    if (acc.length === 0 && account !== acc[0]) {
-      setAccount(acc[0]);
-      canVote();
-    } else {
-      setConnected(false);
-      setAccount(null);
-    }
-  };
+  // const handleAccountChange = (acc) => {
+  //   if (acc.length === 0 && account !== acc[0]) {
+  //     setAccount(acc[0]);
+  //     canVote();
+  //   } else {
+  //     setConnected(false);
+  //     setAccount(null);
+  //   }
+  // };
 
   const value = {
     // postNotify,
